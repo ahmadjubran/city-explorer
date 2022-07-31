@@ -29,21 +29,21 @@ City explorer is a web application that allows users to explore the cities of th
 
 Name of feature: **Set up your React repository & API keys**
 
-Estimate of time needed to complete: **15 minutes**
+Estimate of time needed to complete: **30 minutes**
 
 Start time: **02:45 PM**
 
-Finish time:
+Finish time: **03:20 PM**
 
-Actual time needed to complete:
+Actual time needed to complete: **35 minutes**
 
 ## feature 2
 
-Name of feature: **\*\***\*\***\*\***\_\_\_\_**\*\***\*\***\*\***
+Name of feature: **Locations**
 
-Estimate of time needed to complete: **\_**
+Estimate of time needed to complete: \*\*\*\*
 
-Start time: **\_**
+Start time: **03:20 PM**
 
 Finish time: **\_**
 
