@@ -43,6 +43,10 @@ I used the following resources to create this project:
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [LocationIQ API](https://www.locationiq.com/)
 
+## Map
+
+![Map](./src/image/ahmad_and_fawzi_lab06.png)
+
 ## feature 1
 
 Name of feature: **Set up your React repository & API keys**
