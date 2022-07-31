@@ -4,27 +4,6 @@ import Form from "react-bootstrap/Form";
 import "./main.css";
 import axios from "axios";
 
-// Given that a user enters a valid location in the input
-
-// When the user clicks the "Explore!" button
-
-// Then the latitude and longitude will be displayed on the page
-
-// Endpoint:
-
-// Region 1: US
-// GET: https://us1.locationiq.com/v1/search.php
-
-// Region 2: Europe
-// GET: https://eu1.locationiq.com/v1/search.php
-
-// Query parameters:
-
-// key: YOUR_ACCESS_TOKEN
-// q: SEARCH_STRING
-// format: 'json'
-
-// Use the data from the form to query LocationIQ for the latitude and longitude of the requested city.
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +26,7 @@ export default class Main extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const city = this.state.city;
-    const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${city}&format=json`;
+    const url = `${process.env.REACT_APP_LOCATIONIQ_API}?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${city}&format=json`;
     axios
       .get(url)
       .then((response) => {
