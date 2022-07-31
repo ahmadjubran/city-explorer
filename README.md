@@ -1,7 +1,7 @@
 # Project Name
 
-**Author**: Ahmad Jubran
-**Version**: 1.0.0
+**Author**: Ahmad Jubran  
+**Version**: 1.0.5
 
 ## Overview
 
@@ -9,21 +9,39 @@ City explorer is a web application that allows users to explore the cities of th
 
 ## Getting Started
 
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+    1. Clone the repository
+    2. Install dependencies
+    3. Run the server
+    4. Open the browser and navigate to http://localhost:3000
 
 ## Architecture
 
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+- HTML and CSS
+- JavaScript
+- React
+- React Bootstrap
+- LocationIQ API
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+    1.0.0: Initial release
+    1.0.1: Added Nav bar
+    1.0.2: Added form to search for a city
+    1.0.3: Added search results
+    1.0.4: Added map to search results
+    1.0.5: catch error if city is not found
 
 ## Credit and Collaborations
 
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+This project was created by Ahmad Jubran.
+
+[Fawzi Shiyyab](https://github.com/fawzi-shiyyab19) helped me with the map.
+
+I used the following resources to create this project:
+
+- [React](https://reactjs.org/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [LocationIQ API](https://www.locationiq.com/)
 
 ## feature 1
 
@@ -41,34 +59,34 @@ Actual time needed to complete: **35 minutes**
 
 Name of feature: **Locations**
 
-Estimate of time needed to complete: \*\*\*\*
+Estimate of time needed to complete: **1 hour**
 
-Start time: **03:20 PM**
+Start time: **07:00 PM**
 
-Finish time: **\_**
+Finish time: **09:30 PM**
 
-Actual time needed to complete: **\_**
+Actual time needed to complete: **two and a half hours**
 
 ## feature 3
 
-Name of feature: **\*\***\*\***\*\***\_\_\_\_**\*\***\*\***\*\***
+Name of feature: **Map**
 
-Estimate of time needed to complete: **\_**
+Estimate of time needed to complete: **1 hour**
 
-Start time: **\_**
+Start time: **09:30 PM**
 
-Finish time: **\_**
+Finish time: **10:00 PM**
 
-Actual time needed to complete: **\_**
+Actual time needed to complete: **30 minutes**
 
 ## feature 4
 
-Name of feature: **\*\***\*\***\*\***\_\_\_\_**\*\***\*\***\*\***
+Name of feature: **Errors**
 
-Estimate of time needed to complete: **\_**
+Estimate of time needed to complete: **30 minutes**
 
-Start time: **\_**
+Start time: **10:00 PM**
 
-Finish time: **\_**
+Finish time: **10:30 PM**
 
-Actual time needed to complete: **\_**
+Actual time needed to complete: **30 minutes**

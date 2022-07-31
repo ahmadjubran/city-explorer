@@ -83,13 +83,13 @@ export default class Main extends React.Component {
           </Button>
         </Form>
         <Card className="main-card">
-          <Card.Body>
+          <Card.Body className="main-card-body">
             <Card.Title>City name: {this.state.city}</Card.Title>
             <Card.Text>Latitude: {this.state.latitude}</Card.Text>
             <Card.Text>Longitude: {this.state.longitude}</Card.Text>
             <Card.Img src={this.state.map ? this.state.map : ""} />
+            <Card.Text>{this.state.error ? this.state.error : ""}</Card.Text>
           </Card.Body>
-          <Card.Text>{this.state.error ? this.state.error : ""}</Card.Text>
         </Card>
       </main>
     );
