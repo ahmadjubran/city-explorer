@@ -47,7 +47,9 @@ I used the following resources to create this project:
 
 ![Map](./src/image/ahmad_and_fawzi_lab06.png)
 
-## feature 1
+## LAB: CLASS06 TASKS
+
+### feature 1
 
 Name of feature: **Set up your React repository & API keys**
 
@@ -59,7 +61,7 @@ Finish time: **03:20 PM**
 
 Actual time needed to complete: **35 minutes**
 
-## feature 2
+### feature 2
 
 Name of feature: **Locations**
 
@@ -71,7 +73,7 @@ Finish time: **09:30 PM**
 
 Actual time needed to complete: **two and a half hours**
 
-## feature 3
+### feature 3
 
 Name of feature: **Map**
 
@@ -83,7 +85,7 @@ Finish time: **10:00 PM**
 
 Actual time needed to complete: **30 minutes**
 
-## feature 4
+### feature 4
 
 Name of feature: **Errors**
 
@@ -94,3 +96,17 @@ Start time: **10:00 PM**
 Finish time: **10:30 PM**
 
 Actual time needed to complete: **30 minutes**
+
+## LAB: CLASS09 TASKS
+
+### feature 1
+
+Name of feature: **Refactor**
+
+Estimate of time needed to complete: **30 minutes**
+
+Start time: **03:00 PM**
+
+Finish time: **03:20 AM**
+
+Actual time needed to complete: **20 minutes**
