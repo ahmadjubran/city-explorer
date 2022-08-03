@@ -14,7 +14,12 @@ export default class movies extends React.Component {
               <Col key={idx}>
                 <Card className="movie-card">
                   <Card.Body>
-                    <Card.Img src={movie.image_url} />
+                    {movie.image_url !==
+                    "https://image.tmdb.org/t/p/w500null" ? (
+                      <Card.Img src={movie.image_url} />
+                    ) : (
+                      <Card.Img src="https://via.placeholder.com/300x450" />
+                    )}
                     <Card.Text>{movie.title}</Card.Text>
                     <Card.Text>{movie.overview}</Card.Text>
                     <Card.Text>Average votes: {movie.average_votes}</Card.Text>
