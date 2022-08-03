@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import "./main.css";
 import axios from "axios";
 import Weather from "../Weather/weather.js";
+import Movies from "../Movies/movies.js";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -16,8 +17,10 @@ export default class Main extends React.Component {
       map: "",
       mapError: "",
       weatherError: "",
+      moviesError: "",
       zoom: "1",
       weather: [],
+      movies: [],
     };
   }
 
@@ -27,6 +30,7 @@ export default class Main extends React.Component {
       [event.target.name]: event.target.value,
       mapError: "",
       weatherError: "",
+      moviesError: "",
     });
   };
 
@@ -37,9 +41,9 @@ export default class Main extends React.Component {
 
     const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${city}&format=json`;
 
+    const response = await axios.get(url);
+    const { lat, lon } = response.data[0];
     try {
-      const response = await axios.get(url);
-      const { lat, lon } = response.data[0];
       const map = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=${zoom}`;
       this.setState({
         latitude: lat,
@@ -55,25 +59,45 @@ export default class Main extends React.Component {
         map: "",
       });
     }
-    this.displayWeather(city);
+    this.displayWeather(lat, lon);
+    this.displayMovies(city);
   };
 
-  displayWeather = async (cityName) => {
+  displayWeather = async (latitude, longitude) => {
     const weatherUrl = process.env.REACT_APP_WEATHER;
     try {
-      const weatherDate = await axios.get(weatherUrl, {
-        params: { searchQuery: cityName },
+      const weatherData = await axios.get(weatherUrl, {
+        params: { lat: latitude, lon: longitude },
         weatherError: "",
       });
 
       this.setState({
-        weather: weatherDate.data,
+        weather: weatherData.data,
         weatherError: "",
       });
     } catch (error) {
       this.setState({
         weatherError: `${error.response.status} ${error.response.data.error}`,
         weather: [],
+      });
+    }
+  };
+
+  displayMovies = async (c) => {
+    const moviesUrl = process.env.REACT_APP_MOVIES;
+    try {
+      const moviesData = await axios.get(moviesUrl, {
+        params: { city: c },
+        moviesError: "",
+      });
+      this.setState({
+        movies: moviesData.data,
+        moviesError: "",
+      });
+    } catch (error) {
+      this.setState({
+        moviesError: `${error.response.status} ${error.response.data.error}`,
+        movies: [],
       });
     }
   };
@@ -119,6 +143,12 @@ export default class Main extends React.Component {
           <Weather
             weather={this.state.weather}
             weatherError={this.state.weatherError}
+          />
+        </Card>
+        <Card>
+          <Movies
+            movies={this.state.movies}
+            moviesError={this.state.moviesError}
           />
         </Card>
       </main>
