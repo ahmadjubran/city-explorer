@@ -139,18 +139,17 @@ export default class Main extends React.Component {
             <Card.Text>
               {this.state.mapError ? this.state.mapError : ""}
             </Card.Text>
+            <Card.Text>Weather:</Card.Text>
+            <Weather
+              weather={this.state.weather}
+              weatherError={this.state.weatherError}
+            />
           </Card.Body>
-          <Weather
-            weather={this.state.weather}
-            weatherError={this.state.weatherError}
-          />
         </Card>
-        <Card>
-          <Movies
-            movies={this.state.movies}
-            moviesError={this.state.moviesError}
-          />
-        </Card>
+        <Movies
+          movies={this.state.movies}
+          moviesError={this.state.moviesError}
+        />
       </main>
     );
   }
