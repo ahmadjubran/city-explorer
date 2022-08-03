@@ -15,8 +15,8 @@ export default class movies extends React.Component {
                 <Card className="movie-card">
                   <Card.Body>
                     <Card.Img src={movie.image_url} />
-                    <Card.Text>Title: {movie.title}</Card.Text>
-                    <Card.Text>Overview: {movie.overview}</Card.Text>
+                    <Card.Text>{movie.title}</Card.Text>
+                    <Card.Text>{movie.overview}</Card.Text>
                     <Card.Text>Average votes: {movie.average_votes}</Card.Text>
                     <Card.Text>Total votes: {movie.total_votes}</Card.Text>
                     <Card.Text>Oopularity: {movie.popularity}</Card.Text>
@@ -26,11 +26,6 @@ export default class movies extends React.Component {
               </Col>
             ))}
         </Row>
-        <Card.Body>
-          {this.props.moviesError && (
-            <Card.Text>{this.props.moviesError}</Card.Text>
-          )}
-        </Card.Body>
       </>
     );
   }
