@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-import "./main.css";
 import axios from "axios";
-import Weather from "../Weather/weather.js";
-import Movies from "../Movies/movies.js";
+import Weather from "./Weather/weather";
+import Movies from "./Movies/movies";
+import MainForm from "./MainForm/mainForm";
+
+import "./main.css";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -96,31 +96,12 @@ export default class Main extends React.Component {
   render() {
     return (
       <main className="main">
-        <Form onSubmit={this.handleSubmit} className="main-form">
-          <Form.Group controlId="formBasicCity">
-            <Form.Label>City</Form.Label>
-            <Form.Control
-              type="text"
-              name="city"
-              value={this.state.city}
-              onChange={this.handleChange}
-              placeholder="Enter city"
-            />
-          </Form.Group>
-          <Form.Group controlId="formBasicZoom">
-            <Form.Label>Zoom</Form.Label>
-            <Form.Control
-              type="number"
-              name="zoom"
-              value={this.state.zoom}
-              onChange={this.handleChange}
-              placeholder="Enter zoom"
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Explore!
-          </Button>
-        </Form>
+        <MainForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          city={this.state.city}
+          zoom={this.state.zoom}
+        />
         <Card className="main-card">
           <Card.Body className="main-card-body">
             <Card.Title>City name: {this.state.displayName}</Card.Title>
