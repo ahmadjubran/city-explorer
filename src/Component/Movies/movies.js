@@ -11,8 +11,8 @@ export default class movies extends React.Component {
         <Row xs={1} md={4} className="g-4">
           {this.props.movies &&
             this.props.movies.map((movie, idx) => (
-              <Col>
-                <Card key={idx} className="movie-card">
+              <Col key={idx}>
+                <Card className="movie-card">
                   <Card.Body>
                     <Card.Img src={movie.image_url} />
                     <Card.Text>Title: {movie.title}</Card.Text>
