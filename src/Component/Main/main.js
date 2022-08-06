@@ -1,9 +1,9 @@
+import axios from "axios";
 import React from "react";
 import Card from "react-bootstrap/Card";
-import axios from "axios";
-import Weather from "./Weather/weather";
-import Movies from "./Movies/movies";
 import MainForm from "./MainForm/mainForm";
+import Movies from "./Movies/movies";
+import Weather from "./Weather/weather";
 
 import "./main.css";
 
@@ -48,14 +48,15 @@ export default class Main extends React.Component {
       const { lat, lon } = response.data[0];
       const map = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=${zoom}`;
       this.setState({
-        displayName: response.data[0].display_name,
+        // displayName: response.data[0].display_name,
+        displayName: city,
         latitude: lat,
         longitude: lon,
         map: map,
         error: "",
       });
 
-      this.displayWeather(lat, lon);
+      this.displayWeather(city, lat, lon);
       this.displayMovies(city);
     } catch (error) {
       console.log(error);
@@ -70,11 +71,11 @@ export default class Main extends React.Component {
     }
   };
 
-  displayWeather = async (latitude, longitude) => {
+  displayWeather = async (city, latitude, longitude) => {
     const weatherUrl = process.env.REACT_APP_WEATHER;
 
     const weatherData = await axios.get(weatherUrl, {
-      params: { lat: latitude, lon: longitude },
+      params: { searchQuery: city, lat: latitude, lon: longitude },
     });
 
     this.setState({
@@ -82,11 +83,11 @@ export default class Main extends React.Component {
     });
   };
 
-  displayMovies = async (c) => {
+  displayMovies = async (city) => {
     const moviesUrl = process.env.REACT_APP_MOVIES;
 
     const moviesData = await axios.get(moviesUrl, {
-      params: { city: c },
+      params: { city: city },
     });
     this.setState({
       movies: moviesData.data,
